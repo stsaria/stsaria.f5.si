@@ -11,7 +11,7 @@
         <?php include "header.html" ?>
         <script>
             function isSmartPhone() {
-                if (window.matchMedia && window.matchMedia('(max-device-width: 480px)').matches) {
+                if (window.matchMedia && window.matchMedia('(max-device-width: 855px)').matches) {
                     return true;
                 } else {
                     return false;
@@ -22,14 +22,14 @@
             <h2>作った作品</h2>
             <hr>
             <script>
-                if(!isSmartPhone()){document.write("<div class=\"d-flex justify-content-start\">");}
-                else{document.write("<div>")}
+                if(!isSmartPhone()){document.writeln("<div class=\"d-flex justify-content-start\">");}
+                else{document.writeln("<div>")}
             </script>
                 <div class="card">
                     <h4 class="card-title">Aragon HomePage</h4>
                     <img src="img/screenshot/aragonHomePage.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">EarthMCというサーバーの国のページ</br>自分がサーバー提供&基本プログラム(CGIと最初のHTML&CSS)を作って、あとはsrcという人にbootstrapに置き換えてもらった。</br><hr>使用言語&ツール : HTML(bootstrap), CSS, PHP</p>
+                        <p class="card-text">EarthMCというサーバーの国のページ</br>自分がサーバー提供&基本プログラム(CGIと最初のHTML&CSS)を作って、あとはsrcという人にbootstrapに置き換えてもらった。</br><hr>使用言語&ツール : HTML, CSS, PHP</p>
                         <a href="https://aragon.0am.jp" target="_blank" rel="noopener noreferrer" class="btn btn-primary">WEbPaGE</a> <a href="https://github.com/stsaria/aragon.0am.jp" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Github</a>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                     <h4 class="card-title">MineServerPHP</h4>
                     <img src="img/screenshot/mineServerPHP.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">勉強用のマインクラフトサーバー作成ツール</br><hr>使用言語&ツール : HTML, CSS, PHP, Python, Screen</p>
+                        <p class="card-text">勉強用のマインクラフトサーバー作成ツール</br><hr>使用言語&ツール : HTML(bootstrap), CSS, PHP, Python, Screen</p>
                         <a href="https://github.com/stsaria/MineServerPHP" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Github</a>
                     </div>
                 </div>
@@ -47,8 +47,17 @@
                     <h4 class="card-title">TestVideo</h4>
                     <img src="img/screenshot/testVideo.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">勉強用の動画投稿サイト</br><hr>使用言語&ツール : HTML, CSS, PHP, Python, FFmpeg</p>
+                        <p class="card-text">勉強用の動画投稿サイト</br><hr>使用言語&ツール : HTML(bootstrap), CSS, PHP, Python, FFmpeg</p>
                         <a href="https://github.com/stsaria/TestVideo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Github</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4 class="card-title">AllServer</h4>
+                    <img src="img/screenshot/allServer.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">ポート開放ができない人ができる人のコンピューターにマイクラサーバーを立てるプログラム</br><hr>使用言語&ツール : Python, Socket, PySimpleGUI</p>
+                        <a href="https://github.com/stsaria/allserver-client" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Github(Client)</a> <a href="https://github.com/stsaria/allserver-server" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Github(Server)</a>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ nav .navbar-nav li a{
     border-color: white;
     background-color: #212529;
     width: 300px;
-    @media screen and (max-width: 680px) {
+    @media screen and (max-width: 855px) {
         width: 100%;
     }
 }
