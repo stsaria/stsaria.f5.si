@@ -5,10 +5,7 @@ nav .navbar-nav li a{
     color: white;
     border-color: white;
     background-color: #212529;
-    width: 300px;
-    @media screen and (max-width: 855px) {
-        width: 100%;
-    }
+    width: 100%;
 }
 
 .card-title{text-align: center}
