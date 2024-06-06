@@ -1,11 +1,10 @@
-nav .navbar-nav li a{
-    color: white;
-}
 .card {
-    color: white;
-    border-color: white;
     background-color: #212529;
     width: 100%;
 }
 
+*{
+    color: white !important;
+
+}
 .card-title{text-align: center}
