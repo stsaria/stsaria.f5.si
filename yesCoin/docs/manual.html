@@ -1,0 +1,92 @@
+<h2>YesCoin</h2>
+
+<h3>はじめに</h3>
+<p>YesCoinはYINSTのシンプルなオルトコインです。しかし、ビットコインのようなP2Pや、nonceなどの仕組みにはなっていません。<br>
+別にそんなにめっちゃ頑張って作ったわけじゃなくて、勉強用で作ったので、まあクオリティーは気にしないでもらって.....</p>
+
+<h3>人のノードを使ってみよう</h3>
+<p>まあこれはYINSTでしかURLを共有してないですが....<br>
+なので多分ここに書くことはないです。</p>
+
+<h3>ダウンロード&インストール方法</h3>
+<p class="text-warning">※Python3,Pip3,Gitが必要です。</p>
+
+<ol class="list-group list-group-numbered">
+    <h4>共通</h4>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">ダウンロード</div>
+            GithubからYesCoinをダウンロード(または<a href="https://github.com/stsaria/yesCoin/archive/refs/heads/main.zip">ここから</a>)
+            <pre><code>~$ git clone https://github.com/stsaria/yesCoin</code></pre>
+        </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">必要なライブラリをインストール</div>
+            <pre><code>~yesCoin$ pip3 install -r requirements.txt</code></pre>
+        </div>
+    </li>
+</ol>
+<br>
+<ol class="list-group list-group-numbered">
+    <h4>ノード（マイニングとか送金とかできるクライアント）場合</h4>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">実行</div>
+            <pre><code>~yesCoin$ python3 src/main.py
+# 初期中央サーバーが求められるので、教えられた中央サーバーアドレスを入力
+初期中央サーバー(例: http://xxx.com:11380): </code></pre>
+            操作画面はブラウザ上で行います。
+            実行後<a href="http://127.0.0.1:11381">http://127.0.0.1:11381</a>にアクセスすれば、ログイン画面->ダッシュボードが使えます。
+            もし共有するのなら、ポート11381の解放と、次の ユーザー制限 を見てください。
+        </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">ユーザー制限</div>
+            <p>もし、そのノードの操作画面をいろんな人に共有するなら、マイニングとかが増えると、CPU使用率がすごく上がってしまって、サーバーが重くなってしまいます。<br>
+            それを制限したいのなら、</p>
+            <pre><code>DONTMINING
+DONTMANUALSYNC</code></pre>
+            のような、ファイルをyesCoinディレクトリ直下に置くと制限できます
+        </div>
+    </li>
+</ol>
+<br>
+<ol class="list-group list-group-numbered">
+    <h4>中央サーバーの場合</h4>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">実行</div>
+            <pre><code>~yesCoin$ python3 src/main.py centralServer
+# 初期中央サーバーが求められるので、教えられた中央サーバーアドレスを入力
+初期中央サーバー(例: http://xxx.com:11380): </code></pre>
+            操作画面はブラウザ上で行います。
+            実行後<a href="http://127.0.0.1:11381">http://127.0.0.1:11381</a>にアクセスすれば、ログイン画面->ダッシュボードが使えます
+        </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">あと必要なこと</div>
+            <p>1. ポート開放<br>
+            2. Systemdに登録</p>
+            <pre><code>/etc/systemd/system/yesCoin.service
+[Unit]
+Description=Virtual Coin - Yes Coin -
+After=network.target
+
+[Service]
+WorkingDirectory=/home/stsaria/yesCoin
+
+User=stsaria
+Group=stsaria
+
+Restart=always
+
+ExecStart=/usr/bin/python3 src/main.py centralServer
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+        </div>
+    </li>
+</ol>

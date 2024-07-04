@@ -1,0 +1,11 @@
+* {
+    color: white !important;
+}
+pre {
+    background-color: #7a64642a;
+    padding: 10px;
+    white-space: pre-wrap;
+}
+code {
+    font-family: monospace;
+}
