@@ -1,7 +1,7 @@
 <h2>YesCoin</h2>
 
 <h3>はじめに</h3>
-<p>YesCoinはYINSTのシンプルなオルトコインです。しかし、ビットコインのようなP2Pや、nonceなどの仕組みにはなっていません。<br>
+<p>YesCoinPはYINSTのシンプルなオルトコインです。しかし、ビットコインのようなP2Pや、nonceなどの仕組みにはなっていません。<br>
 別にそんなにめっちゃ頑張って作ったわけじゃなくて、勉強用で作ったので、まあクオリティーは気にしないでもらって.....</p>
 
 <h3>人のノードを使ってみよう</h3>
@@ -16,14 +16,23 @@
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
             <div class="fw-bold">ダウンロード</div>
-            GithubからYesCoinをダウンロード(または<a href="https://github.com/stsaria/yesCoin/archive/refs/heads/main.zip">ここから</a>)
-            <pre><code>~$ git clone https://github.com/stsaria/yesCoin</code></pre>
+            <h5 class="text-warning">注意</h5>
+            <p class="text-warning">YINSTでなければ、台帳の同期が安全化されたYesCoin"P"を使用してください<br>
+            手順は変わりませんし、安全性は、Pバージョンのほうが高いです<br>
+            もしあなたがどうしても"P"ではないバージョンを使いたいのであれば、<br>
+            今後の説明でYesCoinPをYesCoinにしてください（更新も早いかもしれません）</p>
+
+            <h5>ダウンロードリンク</h5>
+            <a href="https://github.com/stsaria/yesCoinP/archive/refs/heads/main.zip"><p class="text-primary">YesCoinP</p></a>
+            <a href="https://github.com/stsaria/yesCoin/archive/refs/heads/main.zip"><p class="text-secondary">YesCoin(Notおすすめ)</p></a>
+            GithubからYesCoinPをダウンロード(Git入ってなかったら上のリンクでもいいけど、更新できない)
+            <pre><code>~$ git clone https://github.com/stsaria/yesCoinP</code></pre>
         </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
             <div class="fw-bold">必要なライブラリをインストール</div>
-            <pre><code>~yesCoin$ pip3 install -r requirements.txt</code></pre>
+            <pre><code>~yesCoinP$ pip3 install -r requirements.txt</code></pre>
         </div>
     </li>
 </ol>
@@ -33,7 +42,7 @@
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
             <div class="fw-bold">実行</div>
-            <pre><code>~yesCoin$ python3 src/main.py
+            <pre><code>~yesCoinP$ python3 src/main.py
 # 初期中央サーバーが求められるので、教えられた中央サーバーアドレスを入力
 初期中央サーバー(例: http://xxx.com:11380): </code></pre>
             操作画面はブラウザ上で行います。
@@ -48,7 +57,7 @@
             それを制限したいのなら、</p>
             <pre><code>DONTMINING
 DONTMANUALSYNC</code></pre>
-            のような、ファイルをyesCoinディレクトリ直下に置くと制限できます
+            のような、ファイルをyesCoinPディレクトリ直下に置くと制限できます
         </div>
     </li>
 </ol>
@@ -58,7 +67,7 @@ DONTMANUALSYNC</code></pre>
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
             <div class="fw-bold">実行</div>
-            <pre><code>~yesCoin$ python3 src/main.py centralServer
+            <pre><code>~yesCoinP$ python3 src/main.py centralServer
 # 初期中央サーバーが求められるので、教えられた中央サーバーアドレスを入力
 初期中央サーバー(例: http://xxx.com:11380): </code></pre>
             操作画面はブラウザ上で行います。
@@ -70,13 +79,13 @@ DONTMANUALSYNC</code></pre>
             <div class="fw-bold">あと必要なこと</div>
             <p>1. ポート開放<br>
             2. Systemdに登録</p>
-            <pre><code>/etc/systemd/system/yesCoin.service
+            <pre><code>/etc/systemd/system/yesCoinP.service
 [Unit]
 Description=Virtual Coin - Yes Coin -
 After=network.target
 
 [Service]
-WorkingDirectory=/home/stsaria/yesCoin
+WorkingDirectory=/home/stsaria/yesCoinP
 
 User=stsaria
 Group=stsaria
